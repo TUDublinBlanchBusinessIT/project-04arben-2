@@ -1,17 +1,27 @@
-<?php 
+<?php
+session_start();
 
-$user = $_POST['username']; 
-$pass = $_POST['password']; 
+
+
+$user = $_POST['username'];
+$pass = $_POST['password'];
+
+
+
 
 include("db_connection.php");
+
 
 $sql = "INSERT INTO users (username, password) VALUES ('$user', '$pass')";
 
 
 
+
 if (mysqli_query($conn, $sql)) {
-    
-    echo "<br>New user created successfully!";
+
+    $_SESSION['user'] = $user;
+
+    echo "<br>New user created successfully! You are now logged in as " . $user;
 
 } else {
 
@@ -19,5 +29,5 @@ if (mysqli_query($conn, $sql)) {
 
 }
 
-mysqli_close($conn); 
+mysqli_close($conn);
 ?>

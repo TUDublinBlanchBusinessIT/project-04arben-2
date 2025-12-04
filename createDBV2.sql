@@ -8,5 +8,3 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 
-INSERT INTO users (username, password)
-VALUES ('testuser', 'testpass');
