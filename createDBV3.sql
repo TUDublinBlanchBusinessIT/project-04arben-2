@@ -7,4 +7,9 @@ CREATE TABLE IF NOT EXISTS users (
     password VARCHAR(50) NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS movies (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL
+);
 
+INSERT INTO movies (title) VALUES ('FNAF2'), ('Interstellar'), ('Alya'), ('Superman');
