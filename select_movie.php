@@ -5,6 +5,7 @@ if (!isset($_SESSION['user'])) {
     header("Location: login.html");
     exit();
 }
+$user = $_SESSION['user'];
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +18,7 @@ if (!isset($_SESSION['user'])) {
 
 </head>
 <body>
-
-
+<h3>Welcome, <?php echo $user; ?>!</h3>
 <br><br><br>
 <h1>Select a Movie</h1>
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['user'])) {
 
 <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-    Select a Movie
+    MOVIES
   </button>
 
 
