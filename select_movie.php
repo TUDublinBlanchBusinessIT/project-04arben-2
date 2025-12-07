@@ -1,8 +1,9 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['user'])) {
-    header("Location: login.html");
+    header("Location: register.html");
     exit();
 }
 $user = $_SESSION['user'];
