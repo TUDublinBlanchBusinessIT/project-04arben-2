@@ -6,6 +6,12 @@ if (!isset($_SESSION['user'])) {
     exit();
 }
 $user = $_SESSION['user'];
+include("db_connection.php");
+
+
+$sql = "SELECT * FROM movies";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -34,14 +40,12 @@ $user = $_SESSION['user'];
 
 
   <div class="dropdown-menu">
-      <a class="dropdown-item" href="#">Movie 1</a>
-      <a class="dropdown-item" href="#">Movie 2</a>
-      <a class="dropdown-item" href="#">Movie 3</a>
-      <a class="dropdown-item" href="#">Movie 4</a>
+       <a class="dropdown-item" href="#"><?php echo $row['title']; ?></a>
+
   </div>
 </div>
-
-
+<br>
+<h5>!!!Currently we have 1 movie available!!!</h5>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
